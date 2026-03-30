@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Offers</title>
+    <link rel="stylesheet" href="offers.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="offers.js"></script>
+</head>
+
+<body>
+    <div class="head-box">
+        <header>
+            <div class="header-container">
+                <div class="logo">
+                    <h1>Car<span>Rental</span></h1>
+                </div>
+                <nav>
+                    <ul id="links">
+                        <li><a href="text.html">Home</a></li>
+                        <li><a href="cars.html">Cars</a></li>
+                        <li><a href="service.html">Services</a></li>
+                        <li><a href="offers.html" class="active">Offers</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+                <div class="header-right">
+                    <div class="auth-btns">
+                        <a href="login.html" class="btn-login">Login</a>
+                        <a href="login.html" class="btn-signup">Sign Up</a>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div class="hero-section">
+            <div class="text-zone">
+                <h2>exclusive offers</h2>
+                <p>Save more on your next luxury ride</p>
+            </div>
+        </div>
+
+        <section class="offers-grid">
+            <div class="offer-card">
+                <div class="discount-badge">-20% OFF</div>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUhi3YEFiJPDKl8_cav9te3OrYDs0uY059Bg&s"
+                    alt="Weekend Offer">
+                <div class="offer-info">
+                    <h3>Weekend Special</h3>
+                    <p>Book for 3 days and get 20% discount on all BMW models.</p>
+                    <span class="valid-until">Valid until: 30 April</span>
+                    <br>
+                    <button type="button" class="btn-claim" id="bmw">Claim Offer</button>
+                </div>
+            </div>
+
+            <div class="offer-card">
+                <div class="discount-badge">FREE DAY</div>
+                <img src="https://s3-eu-west-1.amazonaws.com/staticeu.izmocars.com/toolkit/commonassets/2022/22mercedesbenz/22mercedesbenzc200amglinesd5b/22mercedesbenzc200amglinesd5b_animations/colorpix/fr/400x300/mercedesbenz_22c200amglinesd5b_noirobsidiennem%C3%A9tallis%C3%A9_angular-front.webp"
+                    alt="Long Term Offer">
+                <div class="offer-info">
+                    <h3>Long Term Rental</h3>
+                    <p>Rent any Mercedes for 7 days and get 1 day absolutely FREE.</p>
+                    <span class="valid-until">Valid until: 15 May</span>
+                    <br>
+                    <button type="button" id="Mercedes" class="btn-claim">Claim Offer</button>
+                </div>
+            </div>
+        </section>
+    </div>
+
+
+    <div class="filter-bar">
+        <input type="range" id="priceRange" min="300" max="10000" step="50" value="5000">
+        <span id="priceValue">5000 DH</span>
+
+        <select id="brandSelect">
+            <option value="">All the brands</option>
+            <option value="BMW">BMW</option>
+            <option value="Audi">Audi</option>
+            <option value="Dacia">Dacia</option>
+            <option value="Mercedes">Mercedes</option>
+            <option value="Clio">Clio</option>
+            <option value="Range Rover">Range Rover</option>
+            <option value="Toyota">Toyota</option>
+        </select>
+
+        <select id="durationSelect">
+            <option value="">Period</option>
+            <option value="1">1 Day</option>
+            <option value="2">2 Days</option>
+            <option value="3">3 Days</option>
+            <option value="4">4 Days</option>
+            <option value="5">5 Days</option>
+            <option value="6">6 Days</option>
+            <option value="7">7 Days</option>
+            <option value="15">15 Days</option>
+            <option value="20">20 Days</option>
+        </select>
+
+        <button onclick="goToResults()">filter</button>
+    </div>
+
+
+    <div id="results" class="cards"></div>
+
+    <section class="offers-section">
+        <h1>Nos Offres</h1>
+        <div class="offers-grid">
+            <div class="offer-card">
+                <div class="card-image">
+                    <img src="https://mediapool.bmwgroup.com/cache/P9/202301/P90492262/P90492262-the-new-bmw-x5-xdrive50e-04-23-600px.jpg"
+                        alt="BMW X5">
+                </div>
+                <div class="card-info">
+                    <h3>BMW X5</h3>
+                    <p>Price: 9000 DH/day</p>
+                    <p>Discount: -20%</p>
+                    <p>Fuel: Gasoline</p>
+                    <p>Insurance: Included</p>
+                    <p>Validity: 48h</p>
+                </div>
+                <button type="submit" class="reserve-btn">book now</button>
+            </div>
+
+            <div class="offer-card">
+                <div class="card-image">
+                    <img src="https://stimg.cardekho.com/images/carexteriorimages/630x420/Audi/A4/10548/1757137106350/front-left-side-47.jpg?imwidth=420&impolicy=resize"
+                        alt="Audi A4">
+                </div>
+                <div class="card-info">
+                    <h3>Audi A4</h3>
+                    <p>Price: 8000 DH/day</p>
+                    <p>Discount: -15%</p>
+                    <p>Fuel: Diesel</p>
+                    <p>Insurance: Included</p>
+                    <p>Validity: 3jours</p>
+                </div>
+                <button type="submit" class="reserve-btn">book now</button>
+            </div>
+
+            <div class="offer-card">
+                <div class="card-image">
+                    <img src="https://vehicle-images.carscommerce.inc/7402-110006175/W1KAF4HB3TR313632/thumbnails/large/781d493ac55634294cacce8fcb7fd355.jpg"
+                        alt="Mercedes C-Class">
+                </div>
+                <div class="card-info">
+                    <h3>Mercedes C-Class</h3>
+                    <p>Price: 10000 DH/day</p>
+                    <p>Discount: -10%</p>
+                    <p>Fuel: Gasoline</p>
+                    <p>Insurance: Included</p>
+                    <p>Validity: 48h</p>
+                </div>
+                <button type="submit" class="reserve-btn">book now</button>
+            </div>
+
+            <div class="offer-card">
+                <div class="card-image">
+                    <img src="https://www.leguideauto.ma/contents/cars/pictures/2021/12/large/mwVNOOqA8gLxhfkvv6BYpG1051JifiuEN99UZfmT.webp"
+                        alt="Dacia Logan">
+                </div>
+                <div class="card-info">
+                    <h3>Dacia Logan</h3>
+                    <p>Price: 3000 DH/day</p>
+                    <p>Discount: -25%</p>
+                    <p>Fuel: Diesel</p>
+                    <p>Insurance: Included</p>
+                    <p>Validity: 48h</p>
+                </div>
+                <button type="submit" class="reserve-btn">book now</button>
+            </div>
+
+            <div class="offer-card">
+                <div class="card-image">
+                    <img src="https://medias24.com/content/uploads/2024/07/15/IMG_20240715_104817.png"
+                        alt="Toyota Corolla">
+                </div>
+                <div class="card-info">
+                    <h3>Toyota Corolla</h3>
+                    <p>Price: 4000 DH/day</p>
+                    <p>Discount: -20%</p>
+                    <p>Fuel: Gasoline</p>
+                    <p>Insurance: Included</p>
+                    <p>Validity: 7jours</p>
+                </div>
+                <button type="submit" class="reserve-btn">book now</button>
+            </div>
+
+            <div class="offer-card">
+                <div class="card-image">
+                    <img src="https://bpmcars.fr/mediasecure-getphoto?dossier=modeles&photo=bpm_cars_land_rover_range_rover_evoque_banner_1139886062.webp"
+                        alt="Range Rover Evoque">
+                </div>
+                <div class="card-info">
+                    <h3>Range Rover Evoque</h3>
+                    <p>Price: 9500 DH/day</p>
+                    <p>Discount: -15%</p>
+                    <p>Fuel: Diesel</p>
+                    <p>Insurance: Included</p>
+                    <p>Validity: 48h</p>
+                </div>
+                <button type="submit" class="reserve-btn">book now</button>
+            </div>
+
+            <div class="offer-card">
+                <div class="card-image">
+                    <img src="https://www.mbusa.com/content/dam/mb-nafta/us/global-nav-new/vehicles/MY25-GLASUV-CLASS-Resized.png"
+                        alt="Mercedes GLA">
+                </div>
+                <div class="card-info">
+                    <h3>Mercedes GLA</h3>
+                    <p>Price: 8500 DH/day</p>
+                    <p>Discount: -10%</p>
+                    <p>Fuel: Gasoline</p>
+                    <p>Insurance: Included</p>
+                    <p>Validity: 48h</p>
+                </div>
+                <button type="submit" class="reserve-btn">book now</button>
+            </div>
+
+            <div class="offer-card">
+                <div class="card-image">
+                    <img src="https://www.gpas-cache.ford.com/guid/757644d0-2cd5-39f9-b878-e856a6445a00.jpg?catalogId=WAEFX-CZJ-2026-MustangFRA202600"
+                        alt="Ford Mustang">
+                </div>
+                <div class="card-info">
+                    <h3>Ford Mustang</h3>
+                    <p>Price: 12000 DH/day</p>
+                    <p>Discount: -20%</p>
+                    <p>Fuel: Gasoline</p>
+                    <p>Insurance: Included</p>
+                    <p>Validity: 48h</p>
+                </div>
+                <button type="submit" class="reserve-btn">book now</button>
+            </div>
+        </div>
+    </section>
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <h3>Register for Reservation</h3>
+            <form id="registerForm">
+                <input type="text" placeholder="First Name" required>
+                <input type="text" placeholder="Last Name" required>
+                <input type="email" placeholder="Email" required>
+                <input type="date" placeholder="Date of Birth" required>
+                <input type="tel" placeholder="Phone Number" required>
+                <div class="modal-buttons">
+                    <button type="submit">Register</button>
+                    <button type="button" id="cancelBtn">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-box">
+                <div class="logo">
+                    <h1>Car<span>Rental</span></h1>
+                </div>
+                <p>Providing premium car rental services since 2016. We make your journey comfortable and safe
+                    with our
+                    modern fleet.</p>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.youtube.com/"><i class="fab fa-youtube"></i></a>
+                    <a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-box">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="text.html">Home</a></li>
+                    <li><a href="cars.html">Cars Catalog</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-box">
+                <h3>Contact Info</h3>
+                <ul class="contact-list">
+                    <li><i class="fas fa-map-marker-alt"></i>agadir,founty,office123</li>
+                    <li><i class="fas fa-phone-alt"></i>+21261-234-5670</li>
+                    <li><i class="fas fa-envelope"></i> info@carrental.com</li>
+                    <li><i class="fas fa-clock"></i> Mon-Sun: 8 AM - 7 PM</li>
+                </ul>
+            </div>
+
+            <div class="footer-box">
+                <h3>Newsletter</h3>
+                <p>Subscribe to get the latest offers and car updates.</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Your Email">
+                    <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                </form>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 <span>CarRental</span>. All Rights Reserved.</p>
+        </div>
+    </footer>
+</body>
+
+</html>

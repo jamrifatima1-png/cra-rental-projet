@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Details - CarRental</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-blue: #08b9fe;
+            --dark-bg: #0f172a;
+            --card-bg: #1e293b;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background: var(--dark-bg);
+            color: white;
+            line-height: 1.6;
+        }
+
+        .header-simple {
+            padding: 20px 5%;
+            background: rgba(0, 0, 0, 0.2);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo h1 { font-size: 24px; color: white; margin: 0; }
+        .logo span { color: var(--primary-blue); }
+
+        .details-wrapper {
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 0 5%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: start;
+        }
+
+        .car-image-container { position: sticky; top: 20px; }
+        .car-image-container img {
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            object-fit: cover;
+        }
+
+        .car-content h1 {
+            font-size: 3rem;
+            margin: 0 0 10px 0;
+            text-transform: uppercase;
+        }
+
+        .price-tag {
+            font-size: 1.8rem;
+            color: var(--primary-blue);
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .specs-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            background: var(--card-bg);
+            padding: 25px;
+            border-radius: 15px;
+            margin: 30px 0;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .spec-item { display: flex; align-items: center; gap: 10px; }
+        .spec-item i { color: var(--primary-blue); width: 20px; }
+
+        .description-box h3 { color: var(--primary-blue); margin-bottom: 10px; }
+
+        .rating-section { margin-bottom: 30px; }
+        .stars { font-size: 24px; display: flex; gap: 5px; }
+        .stars i { color: #444; cursor: pointer; transition: 0.3s; }
+        .stars i.active { color: #fbbf24; }
+
+        .action-btns { display: flex; gap: 20px; }
+        .btn {
+            padding: 15px 40px;
+            border-radius: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.3s;
+            text-transform: uppercase;
+            border: none;
+            font-size: 1rem;
+        }
+
+        .btn-rent { background: var(--primary-blue); color: white; flex: 2; }
+        .btn-rent:hover { background: #0ea5e9; transform: translateY(-3px); }
+        .btn-back { background: transparent; border: 2px solid #444; color: white; flex: 1; }
+
+        .modal-overlay {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 10000;
+            backdrop-filter: blur(10px);
+        }
+
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 40px;
+            border-radius: 30px;
+            width: 100%;
+            max-width: 450px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+            text-align: center;
+        }
+
+        .modal-content h2 { color: white; margin-bottom: 25px; }
+        .input-group { margin-bottom: 15px; }
+        .input-group input {
+            width: 100%;
+            padding: 12px;
+            border-radius: 10px;
+            border: 1px solid rgba(255,255,255,0.2);
+            background: rgba(255,255,255,0.9);
+            outline: none;
+            font-size: 16px;
+            color: #333;
+        }
+
+        .modal-buttons { display: flex; gap: 10px; margin-top: 25px; }
+        .btn-register { background: #03034a; color: white; flex: 1; padding: 15px; border-radius: 10px; border: none; cursor: pointer; font-weight: bold; }
+        .btn-cancel { background: #ff3e3e; color: white; flex: 1; padding: 15px; border-radius: 10px; border: none; cursor: pointer; font-weight: bold; }
+
+        @media (max-width: 900px) {
+            .details-wrapper { grid-template-columns: 1fr; }
+            .car-content h1 { font-size: 2rem; }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="header-simple">
+        <div class="logo"><h1>Car<span>Rental</span></h1></div>
+        <div class="auth-btns"><a href="#" style="color:white; text-decoration:none" onclick="goBack()">Close Details</a></div>
+    </header>
+
+    <div class="details-wrapper">
+        <div class="car-image-container">
+            <img id="carImg" src="" alt="Car Image">
+        </div>
+
+        <div class="car-content">
+            <h1 id="carName">Loading...</h1>
+            <div class="price-tag" id="carPrice">0 MAD / day</div>
+
+            <div class="rating-section">
+                <div class="stars" id="starContainer">
+                    <i class="fa-solid fa-star" data-value="1"></i>
+                    <i class="fa-solid fa-star" data-value="2"></i>
+                    <i class="fa-solid fa-star" data-value="3"></i>
+                    <i class="fa-solid fa-star" data-value="4"></i>
+                    <i class="fa-solid fa-star" data-value="5"></i>
+                </div>
+            </div>
+
+            <div class="specs-grid">
+                <div class="spec-item"><i class="fas fa-users"></i> <span id="carCapacity"></span> Persons</div>
+                <div class="spec-item"><i class="fas fa-calendar-alt"></i> Year: <span id="carYear"></span></div>
+                <div class="spec-item"><i class="fas fa-gas-pump"></i> <span id="carFuel"></span></div>
+                <div class="spec-item"><i class="fas fa-door-open"></i> <span id="carDoors"></span> Doors</div>
+                <div class="spec-item"><i class="fas fa-tachometer-alt"></i> <span id="carMileage"></span> km</div>
+                <div class="spec-item"><i class="fas fa-cogs"></i> <span id="carFeatures"></span></div>
+            </div>
+
+            <div class="description-box">
+                <h3>Vehicle Description</h3>
+                <p id="carDescription">No description available.</p>
+            </div>
+
+            <div class="action-btns">
+                <button class="btn btn-rent" onclick="openBookingModal()">Rent Now</button>
+                <button class="btn btn-back" onclick="goBack()">Back</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="bookingModal" class="modal-overlay">
+        <div class="modal-content glass-effect">
+            <h2>Register for <span id="dynamicCarName"></span></h2>
+            <form id="reservationForm">
+                <div class="input-group"><input type="text" placeholder="First Name" required></div>
+                <div class="input-group"><input type="text" placeholder="Last Name" required></div>
+                <div class="input-group"><input type="email" placeholder="Email Address" required></div>
+                <div class="input-group"><input type="date" required></div>
+                <div class="input-group"><input type="tel" placeholder="Phone Number" required></div>
+                <div class="modal-buttons">
+                    <button type="submit" class="btn-register">Confirm Booking</button>
+                    <button type="button" class="btn-cancel" onclick="closeBookingModal()">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        const params = new URLSearchParams(window.location.search); //craractere  car
+        const name = params.get("name") || "Car Model";
+
+        document.getElementById("carName").innerText = name;
+        document.getElementById("dynamicCarName").innerText = name;
+        document.getElementById("carPrice").innerText = (params.get("price") || "0") + " MAD / day";
+        document.getElementById("carCapacity").innerText = params.get("capacity") || "5";
+        document.getElementById("carImg").src = params.get("img") || "https://via.placeholder.com/600x400";
+        document.getElementById("carYear").innerText = params.get("year") || "2024";
+        document.getElementById("carFuel").innerText = params.get("fuel") || "Petrol";
+        document.getElementById("carDoors").innerText = params.get("doors") || "4";
+        document.getElementById("carMileage").innerText = params.get("mileage") || "0";
+        document.getElementById("carFeatures").innerText = params.get("features") || "Standard";
+        document.getElementById("carDescription").innerText = params.get("description") || params.get("desc") || "Premium rental car.";
+
+        const stars = document.querySelectorAll(".stars i");
+        let currentRating = localStorage.getItem("rating_" + name) || 0; // read the storage value --- 0 delfaut if there is no value
+
+        function updateStars(rating) { // feedback
+            stars.forEach((star, index) => {
+                star.classList.toggle("active", index < rating);
+            });
+        }
+
+        stars.forEach(star => { //click stars
+            star.addEventListener("click", () => {
+                const val = star.getAttribute("data-value");
+                currentRating = (currentRating == val) ? 0 : val;
+                localStorage.setItem("rating_" + name, currentRating);
+                updateStars(currentRating);
+            });
+        });
+        updateStars(currentRating); //your feedbak stars
+
+        function openBookingModal() { //formulaire
+            document.getElementById('bookingModal').style.display = 'flex';
+        }
+
+        function closeBookingModal() {
+            document.getElementById('bookingModal').style.display = 'none';
+        }
+
+        window.onclick = function(event) {
+            const modal = document.getElementById('bookingModal');
+            if (event.target == modal) {
+                closeBookingModal();
+            }
+        };
+
+        document.getElementById('reservationForm').onsubmit = function(e) {
+            e.preventDefault();
+            alert(`Awesome! Your request for the ${name} has been sent successfully.`);
+            closeBookingModal();
+        };
+
+        function goBack() {
+            window.history.back(); // cars page
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Rental | Home</title>
+    <link rel="stylesheet" href="accueil.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="accueil.js"></script>
+</head>
+
+<body>
+    <div class="head-box">
+        <video autoplay loop muted playsinline class="back-video">
+            <source src="c:\Users\GoPc\Desktop\mini projet\256064.mp4" type="video/mp4">
+        </video>
+
+        <header>
+            <div class="container">
+                <div class="logo">
+                    <h1>Car<span>Rental</span></h1>
+                </div>
+
+                <nav>
+                    <ul id="links">
+                        <li><a href="text.html">Home</a></li>
+                        <li><a href="cars.html">Cars</a></li>
+                        <li><a href="service.html">Services</a></li>
+                        <li><a href="offers.html">Offers</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+
+                <div class="header-right">
+                    <div class="auth-btns">
+                        <a href="login.html" class="btn-login">Login</a>
+                        <a href="login.html" class="btn-signup">Sign Up</a>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div class="body-box">
+            <section class="text-zone">
+                <h2>Rent your dream ride now</h2>
+                <p>The best prices and the latest models are waiting just for you!</p>
+                <div class="btns-text">
+                    <a href="details.html">
+                        <button type="button">View Details</button>
+                    </a>
+                    <a href="cars.html">
+                        <button type="button">Rent Now</button>
+                    </a>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <div class="cars">
+        <div class="search-bar">
+            <input type="text" id="searchName" placeholder="Search by name (BMW...)">
+            <select id="filterBrand">
+                <option value="">All Brands</option>
+                <option value="BMW">BMW</option>
+                <option value="Mercedes">Mercedes</option>
+                <option value="Range Rover">Range Rover</option>
+                <option value="Audi">Audi</option>
+                <option value="Clio">Clio</option>
+                <option value="Dacia">Dacia</option>
+                <option value="Toyota">Toyota</option>
+            </select>
+            <select id="filterCapacity">
+                <option value="">Capacity</option>
+                <option value="2">2 persons</option>
+                <option value="5">5 persons</option>
+                <option value="6">6 persons</option>
+            </select>
+            <input type="number" id="maxPrice" placeholder="Max price (MAD)">
+            <a href="cars.html">
+                <button type="submit">search</button>
+            </a>
+        </div>
+    </div>
+
+    <div class="services">
+        <a href="service.html">
+            <div class="card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqzcjGVit7flloH44Vk80X0hQapwbpb2jYWQ&s"
+                    alt="Delivery">
+                <div class="card-content">
+                    <h3>Delivery</h3>
+                    <p>We deliver your chosen car directly to your home.</p>
+                </div>
+            </div>
+        </a>
+        <a href="service.html">
+            <div class="card">
+                <img src="https://img.freepik.com/premium-photo/car-service-website-online-booking-repair-automobile-snugly_31965-653890.jpg"
+                    alt="Booking">
+                <div class="card-content">
+                    <h3>Quick booking</h3>
+                    <p>Book your favorite ride in less than 2 minutes.</p>
+                </div>
+            </div>
+        </a>
+        <a href="service.html">
+            <div class="card">
+                <img src="https://userimg-assets-eu.customeriomail.com/images/client-env-107673/1732579206497_pricing-strategies-for-car-dealers-1_01JDJW9A6A7APHSD5A2TG5AZKQ.jpg"
+                    alt="Pricing">
+                <div class="card-content">
+                    <h3>Competitive prices</h3>
+                    <p>Enjoy luxury cars with the best prices in the market.</p>
+                </div>
+            </div>
+            
+        </a>
+
+    <div class="offers">
+        <section class="offers-grid">
+            <div class="offer-card">
+                <div class="discount-badge">-20% OFF</div>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUhi3YEFiJPDKl8_cav9te3OrYDs0uY059Bg&s"
+                    alt="Weekend Offer">
+                <div class="offer-info">
+                    <h3>Weekend Special</h3>
+                    <p>Book for 3 days and get 20% discount on all BMW models.</p>
+                    <span class="valid-until">Valid until: 30 April</span><br>
+                    <a href="offers.html">
+                        <button type="button" class="btn-claim" id="bmw">Claim Offer</button>
+                    </a>
+                </div>
+            </div>
+
+            <div class="offer-card">
+                <div class="discount-badge">FREE DAY</div>
+                <img src="https://s3-eu-west-1.amazonaws.com/staticeu.izmocars.com/toolkit/commonassets/2022/22mercedesbenz/22mercedesbenzc200amglinesd5b/22mercedesbenzc200amglinesd5b_animations/colorpix/fr/400x300/mercedesbenz_22c200amglinesd5b_noirobsidiennem%C3%A9tallis%C3%A9_angular-front.webp"
+                    alt="Long Term Offer">
+                <div class="offer-info">
+                    <h3>Long Term Rental</h3>
+                    <p>Rent any Mercedes for 7 days and get 1 day absolutely FREE.</p>
+                    <span class="valid-until">Valid until: 15 May</span><br>
+                    <a href="offers.html">
+                        <button type="button" id="Mercedes" class="btn-claim">Claim Offer</button>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div class="about">
+        <div class="content-wrapper">
+            <div class="story-box">
+                <div class="icon-circle"><i class="fas fa-history"></i></div>
+                <h3>Who We Are</h3>
+                <p>Started in 2016 with just a small fleet of 5 cars, <strong>CarRental</strong> was born out of a
+                    simple passion: making premium driving experiences accessible to everyone.</p>
+            </div>
+
+            <div class="vision-box">
+                <div class="icon-circle"><i class="fas fa-bullseye"></i></div>
+                <h3>Our Mission</h3>
+                <blockquote>"To provide your dream ride at competitive prices while maintaining global safety
+                    standards."</blockquote>
+                <p>We strive to combine luxury with affordability for total peace of mind.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="contact">
+        <h2>to contact us</h2>
+        <div class="email">
+            <h2>email us</h2>
+            <p>info@carrental.com</p>
+        </div>
+        <div class="address">
+            <h2>address</h2>
+            <p>agadir, founty, office123</p>
+        </div>
+        <div class="hours">
+            <h2>opening hours</h2>
+            <p>Mon-Sun: 8 AM - 7 PM</p>
+        </div>
+        <div class="tel">
+            <h2>call us</h2>
+            <p>+21261-234-5670</p>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-box">
+                <div class="logo">
+                    <h1>Car<span>Rental</span></h1>
+                </div>
+                <p>Providing premium car rental services since 2016. We make your journey comfortable and safe with our
+                    modern fleet.</p>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.youtube.com/"><i class="fab fa-youtube"></i></a>
+                    <a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-box">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="text.html">Home</a></li>
+                    <li><a href="cars.html">Cars Catalog</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-box">
+                <h3>Contact Info</h3>
+                <ul class="contact-list">
+                    <li><i class="fas fa-map-marker-alt"></i>agadir,founty,office123</li>
+                    <li><i class="fas fa-phone-alt"></i>+21261-234-5670</li>
+                    <li><i class="fas fa-envelope"></i> info@carrental.com</li>
+                    <li><i class="fas fa-clock"></i> Mon-Sun: 8 AM - 7 PM</li>
+                </ul>
+            </div>
+
+            <div class="footer-box">
+                <h3>Newsletter</h3>
+                <p>Subscribe to get the latest offers and car updates.</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Your Email">
+                    <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                </form>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 <span>CarRental</span>. All Rights Reserved.</p>
+        </div>
+    </footer>
+</body>
+
+</html>

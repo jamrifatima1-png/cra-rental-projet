@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="login.css">
+</head>
+
+<body>
+    <div class="auth-container" id="auth-container">
+        <div class="form-container sign-up-container">
+            <form action="#">
+                <h1>Create Account</h1>
+                <div class="input-group">
+                    <input type="text" placeholder="Full Name" />
+                    <i class="fas fa-user field-icon"></i>
+                </div>
+                <div class="input-group">
+                    <input type="email" placeholder="Email" />
+                    <i class="fas fa-envelope field-icon"></i>
+                </div>
+                <div class="input-group">
+                    <input type="password" placeholder="Password" />
+                    <i class="fas fa-lock field-icon"></i>
+                </div>
+                <button class="main-btn">Sign Up</button>
+            </form>
+        </div>
+
+        <div class="form-container sign-in-container">
+            <form action="#">
+                <h1>Login</h1>
+                <div class="social-icons">
+                    <a href="https://accounts.google.com/" id="google"><i class="fab fa-google"></i></a>
+                    <a href="https://www.facebook.com/" id="facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://github.com/" id="git"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/" id="linkedin"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+                <span>or use your account</span>
+                <div class="input-group">
+                    <input type="text" placeholder="Username">
+                    <i class="fas fa-user field-icon"></i>
+                </div>
+                <div class="input-group">
+                    <input type="password" placeholder="Password">
+                    <i class="fas fa-lock field-icon"></i>
+                </div>
+                <a href="forget pass.html" class="forgot">Forgot password?</a>
+                <button class="main-btn" href="text.html" id="loginBtn">Login</button>
+            </form>
+        </div>
+
+        <div class="overlay-container">
+            <div class="overlay">
+                <div class="overlay-panel overlay-left">
+                    <h1>Welcome Back!</h1>
+                    <p>To keep connected with us please login with your personal information.</p>
+                    <button class="ghost-btn" id="signIn">Sign In</button>
+                </div>
+                <div class="overlay-panel overlay-right">
+                    <h1>Hello, Welcome!</h1>
+                    <p>Enter your personal details and start journey with us</p>
+                    <button class="ghost-btn" id="signUp" href="text.html">Register</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const signUpButton = document.getElementById('signUp');
+        const signInButton = document.getElementById('signIn');
+        const container = document.getElementById('auth-container');
+
+        signUpButton.addEventListener('click', () => { //user click in the button
+            container.classList.add("right-panel-active"); //switch from login to sing up
+        });
+
+        signInButton.addEventListener('click', () => {
+            container.classList.remove("right-panel-active"); // remove ...to sing up to login
+        });
+    </script>
+    <script>
+        document.getElementById('loginBtn').addEventListener('click', function (e) {
+            e.preventDefault(); //arrete refrech to the page ..to control
+            const user = document.querySelector('input[type="text"]').value;
+            const pass = document.querySelector('input[type="password"]').value;
+
+            if (user !== "" && pass !== "") { //verification if the user enter his info
+                alert("Login Successful! Redirecting to Home...");
+                window.location.href = "text.html";
+            } else {
+                alert("Please fill in all fields!");
+            }
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reset Password</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: #eef2f3;
+            overflow: hidden;
+        }
+
+        .reset-container {
+            background-color: #ffffff;
+            padding: 50px;
+            border-radius: 30px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            width: 450px;
+            text-align: center;
+            animation: slideUp 0.8s ease-out;
+        }
+
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        h1 {
+            font-size: 28px;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        p {
+            color: #777;
+            font-size: 14px;
+            margin-bottom: 25px;
+        }
+
+        .input-group {
+            position: relative;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 12px 15px;
+            padding-right: 45px;
+            background-color: #f3f3f3;
+            border: 2px solid transparent;
+            border-radius: 12px;
+            outline: none;
+            transition: 0.3s;
+        }
+
+        .input-group input:focus {
+            border-color: #00d4ff;
+            background-color: #fff;
+        }
+
+        .field-icon {
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #888;
+        }
+
+        .main-btn {
+            width: 100%;
+            padding: 14px;
+            border: none;
+            border-radius: 12px;
+            background: linear-gradient(to right, #00d4ff, #0099ff);
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .main-btn:hover {
+            transform: scale(1.02);
+            box-shadow: 0 5px 15px rgba(0, 212, 255, 0.4);
+        }
+
+        .forgot {
+            display: inline-block;
+            margin-top: 20px;
+            color: #0099ff;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        .forgot:hover {
+            text-decoration: underline;
+        }
+
+        .success-msg {
+            display: none;
+            color: #28a745;
+            background: #d4edda;
+            padding: 10px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="reset-container">
+        <form id="resetForm">
+            <h1>Reset Password</h1>
+            <p>Please enter your email to receive a reset link</p>
+            
+            <div id="statusMessage" class="success-msg">
+                Reset link sent to your email!
+            </div>
+
+            <div class="input-group">
+                <input type="email" id="userEmail" placeholder="Email Address" required>
+                <i class="fas fa-envelope field-icon"></i>
+            </div>
+
+            <button type="submit" class="main-btn" id="sendBtn">Send Link</button>
+            <br>
+            <a href="login.html" class="forgot">Back to Login</a>
+        </form>
+    </div>
+
+    <script>
+        const resetForm = document.getElementById('resetForm');
+        const statusMessage = document.getElementById('statusMessage');
+        const sendBtn = document.getElementById('sendBtn');
+
+        resetForm.addEventListener('submit', (e) => { //when the user click in the button
+            e.preventDefault(); 
+            
+            const email = document.getElementById('userEmail').value;
+            
+            sendBtn.innerText = "Sending...";
+            sendBtn.disabled = true; //disable button
+
+            setTimeout(() => { // like sending
+                statusMessage.style.display = "block";
+                sendBtn.innerText = "Link Sent!";
+                sendBtn.style.background = "#28a745"; 
+            }, 1500); //delay
+        });
+    </script>
+
+</body>
+</html>

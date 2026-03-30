@@ -1,0 +1,449 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+html, body {
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden; 
+}
+
+.header-general {
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+        url('https://wallpaperbat.com/img/106344615-self-driving-cars-picture-download.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+header .container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 25px 5%;
+}
+
+.logo h1 {
+    color: white;
+    font-size: 28px;
+}
+
+.logo span {
+    color: rgb(0, 238, 255);
+}
+
+#links {
+    display: flex;
+    list-style: none;
+    margin-top: 5px;
+}
+
+#links li a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 15px;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+#links li a:hover {
+    color: rgba(123, 236, 237, 0.952);
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.search-box:hover{
+    border-color: aqua;
+}
+.auth-btns {
+    display: flex;
+    white-space: nowrap;
+}
+
+.auth-btns a {
+    text-decoration: none;
+    padding: 10px 25px;
+    border-radius: 6px;
+    margin-left: 12px;
+    font-weight: bold;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.btn-login {
+    border: 1px solid white;
+    color: white;
+}
+.btn-login:hover{
+    background-color: #fff;
+    color: #333;
+}
+
+.btn-signup {
+    background-color: rgb(8, 185, 254);
+    color: white;
+}
+
+
+header .about-hero-content {
+    position: absolute;
+    bottom: 100px;
+    left: 5%;
+    color: white;
+    z-index: 10;
+}
+
+header .about-hero-content h2 {
+    font-size: 5rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin: 0;
+    text-shadow: 2px 2px 5px rgb(0, 242, 255);
+}
+
+header .about-hero-content p {
+    font-size: 1.5rem;
+    margin-top: 5px;
+    letter-spacing: 1px;
+}
+
+.general-body .about-hero-content {
+    display: none; 
+}
+
+.story-vision {
+    padding: 80px 5%;
+    background-color: #d9e0e688;
+    position: relative;
+    z-index: 20;
+}
+
+.section-title h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: #333;
+}
+
+.section-title span {
+    color: rgb(0, 238, 255);
+}
+
+.content-wrapper {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.story-box, .vision-box {
+    flex: 1;
+    min-width: 300px;
+    background: #fff;
+    padding: 40px;
+    border-radius: 25px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    transition: 0.3s;
+    border: 1px solid #eee;
+}
+
+.story-box:hover, .vision-box:hover {
+    border-color: rgb(0, 238, 255);
+    transform: translateY(-5px);
+}
+
+.icon-circle {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(to right, #00d4ff, #0099ff);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+blockquote {
+    font-style: italic;
+    color: #444;
+    border-left: 4px solid rgb(0, 238, 255);
+    padding-left: 15px;
+    margin: 15px 0;
+    font-weight: 500;
+}
+
+.why-choose-us {
+    padding: 80px 5%;
+    background-color: #ffffff;
+}
+
+.why-choose-us .section-title {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.why-choose-us .section-title h2 {
+    font-size: 2.8rem;
+    color: #222;
+}
+
+.why-choose-us .section-title h2 span {
+    color: rgb(0, 238, 255);
+}
+
+.why-choose-us .section-title p {
+    color: #777;
+    font-size: 1.1rem;
+    margin-top: 10px;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.feature-card {
+    background: #f9f9f9;
+    padding: 40px 30px;
+    border-radius: 25px;
+    text-align: center;
+    transition: 0.4s ease;
+    border: 1px solid #eee;
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+    background: #fff;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+    border-color: rgb(0, 238, 255);
+}
+
+.feature-icon {
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(135deg, rgb(8, 185, 254), rgb(0, 238, 255));
+    color: white;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 28px;
+    margin: 0 auto 25px;
+    box-shadow: 0 8px 20px rgba(8, 185, 254, 0.3);
+}
+
+.feature-card h3 {
+    font-size: 1.4rem;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.feature-card p {
+    color: #666;
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+.our-numbers {
+    padding: 60px 5%;
+    background-image: url('https://plus.unsplash.com/premium_photo-1661382085134-c44554b01ab3?q=80&w=1172&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.container-numbers {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.number-item {
+    background: white;
+    padding: 30px;
+    border-radius: 25px;
+    text-align: center;
+    flex: 1;
+    min-width: 200px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+    transition: 0.3s ease;
+}
+
+.number-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 238, 255, 0.2);
+}
+
+.icon-box {
+    font-size: 2.5rem;
+    color: rgb(0, 238, 255);
+    margin-bottom: 15px;
+}
+
+.number-item h2 {
+    font-size: 2.5rem;
+    color: #222;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.number-item p {
+    color: #666;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+@media (max-width: 768px) {
+    .number-item {
+        min-width: 45%;
+    }
+}
+
+footer {
+    background: #1a1a1a;
+    color: white;
+    padding: 60px 5% 20px;
+    margin-top: 50px;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-box {
+    flex: 1;
+    min-width: 250px;
+}
+
+.footer-box h3 {
+    font-size: 1.5rem;
+    margin-bottom: 25px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.footer-box h3::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 50px;
+    height: 2px;
+    background: rgb(0, 238, 255);
+}
+
+.footer-box p {
+    color: #bbb;
+    line-height: 1.8;
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+}
+
+.footer-box ul {
+    list-style: none;
+}
+
+.footer-box ul li {
+    margin-bottom: 12px;
+}
+
+.footer-box ul li a {
+    color: #bbb;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.footer-box ul li a:hover {
+    color: rgb(0, 238, 255);
+    padding-left: 10px;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icons a {
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.social-icons a:hover {
+    background: rgb(0, 238, 255);
+    transform: translateY(-5px);
+}
+
+.newsletter-form {
+    display: flex;
+    margin-top: 20px;
+}
+
+.newsletter-form input {
+    padding: 12px;
+    border: none;
+    border-radius: 6px 0 0 6px;
+    width: 80%;
+    outline: none;
+}
+
+.newsletter-form button {
+    background: rgb(0, 238, 255);
+    border: none;
+    padding: 12px 20px;
+    border-radius: 0 6px 6px 0;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.newsletter-form button:hover {
+    background: rgb(5, 150, 220);
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 50px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-bottom span {
+    color: rgb(0, 238, 255);
+}

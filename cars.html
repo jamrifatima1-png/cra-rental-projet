@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cars Catalog</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="cars.css">
+</head>
+
+<body>
+
+    <div class="header-general">
+        <header>
+            <div class="container">
+                <div class="logo">
+                    <h1>Car<span>Rental</span></h1>
+                </div>
+
+                <nav>
+                    <ul id="links">
+                        <li><a href="text.html">Home</a></li>
+                        <li><a href="cars.html">Cars</a></li>
+                        <li><a href="service.html">Services</a></li>
+                        <li><a href="offers.html">Offers</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+
+                <div class="header-right">
+                    <div class="auth-btns">
+                        <a href="login.html" class="btn-login">Login</a>
+                        <a href="login.html" class="btn-signup">Sign Up</a>
+                    </div>
+                </div>
+            </div>
+            <div class="about-hero-content">
+                <h2>Find Your Perfect Match</h2>
+                <p>Explore our curated collection of world-class automobiles</p>
+            </div>
+        </header>
+
+        <div class="search-bar">
+            <input type="text" id="searchName" placeholder="Search by name (BMW...)">
+            <select id="filterBrand">
+                <option value="">All Brands</option>
+                <option value="BMW">BMW</option>
+                <option value="Mercedes">Mercedes</option>
+                <option value="Range Rover">Range Rover</option>
+                <option value="Audi">Audi</option>
+                <option value="Clio">Clio</option>
+                <option value="Dacia">Dacia</option>
+                <option value="Toyota">Toyota</option>
+            </select>
+            <select id="filterCapacity">
+                <option value="">Capacity</option>
+                <option value="2">2 persons</option>
+                <option value="5">5 persons</option>
+                <option value="6">6 persons</option>
+            </select>
+            <input type="number" id="maxPrice" placeholder="Max price (MAD)">
+            <button type="submit">search</button>
+        </div>
+    </div>
+
+    <section class="cars-section">
+        <h1>Cars</h1>
+
+        <p id="noResults" style="display:none;">No cars found</p>
+
+        <div class="cars-container">
+            <div class="car-card" data-name="BMW X5" data-brand="BMW" data-price="1000" data-capacity="5"
+                data-year="2021" data-fuel="Gasoline" data-doors="4" data-mileage="25000"
+                data-features="GPS,AC,Automatic" data-description="Luxury SUV with advanced features">
+                <button class="fav-btn" onclick="toggleFavorite(this)">
+                    <i class="far fa-heart"></i>
+                </button>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBjTlD5nk--sF-e48uh5u5Z1B65wpOhgP4mQ&s"
+                    alt="BMW">
+                <h3>BMW X5</h3>
+                <p>1000 MAD / day</p>
+                <p><i class="fas fa-user-friends"></i> 5 persons</p>
+                <button onclick="goToDetails(this)">En savoir plus</button>
+                <button onclick="rentNow('BMW X5')">Rent Now</button>
+            </div>
+
+            <div class="car-card" data-name="Mercedes" data-brand="Mercedes" data-price="900" data-capacity="5"
+                data-year="2021" data-fuel="Gasoline" data-doors="4" data-mileage="25000"
+                data-features="GPS, AC, Automatic" data-description="Luxury car with comfortable seats">
+                <button class="fav-btn" onclick="toggleFavorite(this)">
+                    <i class="far fa-heart"></i>
+                </button>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgZeWykTBLQ6BimcQN60jYDgKIDijqd3D2Lw&s"
+                    alt="Mercedes">
+                <h3>Mercedes C-Class</h3>
+                <p>900 MAD / day</p>
+                <p><i class="fas fa-user-friends"></i> 5 persons</p>
+                <button onclick="goToDetails(this)">En savoir plus</button>
+                <button onclick="rentNow('Mercedes C-Class')">Rent Now</button>
+            </div>
+
+            <div class="car-card" data-name="Range Rover" data-brand="Range Rover" data-price="1500" data-capacity="6"
+                data-year="2022" data-fuel="Diesel" data-doors="5" data-mileage="18000"
+                data-features="GPS, AC, Automatic, Sunroof" data-description="Luxury SUV with off-road capabilities">
+                <button class="fav-btn" onclick="toggleFavorite(this)">
+                    <i class="far fa-heart"></i>
+                </button>
+                <img src="https://imgd-ct.aeplcdn.com/664x415/n/8vhfteb_1777719.jpg?q=80" alt="Range Rover">
+                <h3>Range Rover</h3>
+                <p>1500 MAD / day</p>
+                <p><i class="fas fa-user-friends"></i> 6 persons</p>
+                <button onclick="goToDetails(this)">En savoir plus</button>
+                <button onclick="rentNow('Range Rover')">Rent Now</button>
+            </div>
+
+            <div class="car-card" data-name="BMW" data-brand="BMW" data-price="2000" data-capacity="5" data-year="2023"
+                data-fuel="Petrol" data-doors="4" data-mileage="12000" data-features="GPS, AC, Automatic, Sport Mode"
+                data-description="High-performance luxury sedan">
+                <button class="fav-btn" onclick="toggleFavorite(this)">
+                    <i class="far fa-heart"></i>
+                </button>
+                <img src="https://www.iihs.org/cdn-cgi/image/width=636/api/ratings/model-year-images/3177/" alt="BMW">
+                <h3>BMW M5</h3>
+                <p>2000 MAD / day</p>
+                <p><i class="fas fa-user-friends"></i> 5 persons</p>
+                <button onclick="goToDetails(this)">En savoir plus</button>
+                <button onclick="rentNow('BMW M5')">Rent Now</button>
+            </div>
+
+            <div class="car-card" data-name="Clio" data-brand="Clio" data-price="400" data-capacity="2" data-year="2021"
+                data-fuel="Petrol" data-doors="3" data-mileage="30000" data-features="AC, Manual, Compact"
+                data-description="Compact and efficient city car">
+                <button class="fav-btn" onclick="toggleFavorite(this)">
+                    <i class="far fa-heart"></i>
+                </button>
+                <img src="https://www.gaz-mobilite.fr/img/modeles/renault_clio-gpl.jpg" alt="Clio">
+                <h3>Renoult Clio</h3>
+                <p>400 MAD / day</p>
+                <p><i class="fas fa-user-friends"></i> 2 persons</p>
+                <button onclick="goToDetails(this)">En savoir plus</button>
+                <button onclick="rentNow('Renoult Clio')">Rent Now</button>
+            </div>
+
+            <div class="car-card" data-name="Audi" data-brand="Audi" data-price="4500" data-capacity="2"
+                data-year="2022" data-fuel="Petrol" data-doors="2" data-mileage="12000"
+                data-features="AC, Automatic, Sport" data-description="Sporty and elegant coupe">
+                <button class="fav-btn" onclick="toggleFavorite(this)">
+                    <i class="far fa-heart"></i>
+                </button>
+                <img src="https://cdn.pixabay.com/photo/2022/01/08/13/40/car-6924011_1280.png" alt="Audi">
+                <h3>Audi TT</h3>
+                <p>4500 MAD / day</p>
+                <p><i class="fas fa-user-friends"></i> 2 persons</p>
+                <button onclick="goToDetails(this)">En savoir plus</button>
+                <button onclick="rentNow('Audi TT')">Rent Now</button>
+            </div>
+
+            <div class="car-card" data-name="Dacia" data-brand="Dacia" data-price="200" data-capacity="5"
+                data-year="2018" data-fuel="Diesel" data-doors="5" data-mileage="45000" data-features="AC, Manual, SUV"
+                data-description="Reliable and spacious SUV">
+                <button class="fav-btn" onclick="toggleFavorite(this)">
+                    <i class="far fa-heart"></i>
+                </button>
+                <img src="https://www.dacia.m-automotiv.ma/storage/modeles/July2024/JiRNGocgD2jqDjNSvDk3.webp"
+                    alt="Dacia">
+                <h3>Dacia Duster(2018)</h3>
+                <p>200 MAD / day</p>
+                <p><i class="fas fa-user-friends"></i> 5 persons</p>
+                <button onclick="goToDetails(this)">En savoir plus</button>
+                <button onclick="rentNow('Dacia Duster(2018)')">Rent Now</button>
+            </div>
+
+            <div class="car-card" data-name="Toyota C-HR" data-brand="Toyota" data-price="400" data-capacity="6"
+                data-year="2020" data-fuel="Hybrid" data-doors="5" data-mileage="30000"
+                data-features="AC, Automatic, SUV" data-description="Compact hybrid SUV with modern design">
+                <button class="fav-btn" onclick="toggleFavorite(this)">
+                    <i class="far fa-heart"></i>
+                </button>
+                <img src="https://kifalstorage.s3.amazonaws.com/new/img/toyota/yaris/principal.png" alt="Toyota">
+                <h3>Toyota C-HR</h3>
+                <p>400 MAD / day</p>
+                <p><i class="fas fa-user-friends"></i> 6 persons</p>
+                <button onclick="goToDetails(this)">En savoir plus</button>
+                <button onclick="rentNow('Toyota C-HR')">Rent Now</button>
+            </div>
+        </div>
+    </section>
+
+    <div id="sidebar" class="sidebar">
+        <a href="javascript:void(0)" class="close-btn" onclick="closeMenu()">×</a>
+        <a href="text.html">Home</a>
+        <a href="cars.html">Cars</a>
+        <a href="service.html">Services</a>
+        <a href="contact.html">Contact</a>
+    </div>
+
+    <div id="overlay" class="overlay" onclick="closeMenu()"></div>
+
+    <div id="favPopup" class="fav-popup">
+        <p>Added to favorites!</p>
+        <a href="favorites.html">Go to Favorites</a>
+    </div>
+
+    <div id="bookingModal" class="modal-overlay">
+        <div class="modal-content glass-effect">
+            <h2>Register for <span id="dynamicCarName"></span></h2>
+            <form id="reservationForm">
+                <div class="input-group"><input type="text" placeholder="First Name" required></div>
+                <div class="input-group"><input type="text" placeholder="Last Name" required></div>
+                <div class="input-group"><input type="email" placeholder="Email" required></div>
+                <div class="input-group"><input type="date" required></div>
+                <div class="input-group"><input type="tel" placeholder="Phone Number" required></div>
+                <div class="modal-buttons">
+                    <button type="submit" class="btn-register">Confirm Registration</button>
+                    <button type="button" class="btn-cancel" onclick="closeBookingModal()">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-box">
+                <div class="logo">
+                    <h1>Car<span>Rental</span></h1>
+                </div>
+                <p>Providing premium car rental services since 2016. We make your journey comfortable and safe.</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-box">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="text.html">Home</a></li>
+                    <li><a href="cars.html">Cars Catalog</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-box">
+                <h3>Contact Info</h3>
+                <ul class="contact-list">
+                    <li><i class="fas fa-map-marker-alt"></i> Agadir, Founty, Office 123</li>
+                    <li><i class="fas fa-phone-alt"></i> +21261-234-5670</li>
+                    <li><i class="fas fa-envelope"></i> info@carrental.com</li>
+                </ul>
+            </div>
+
+            <div class="footer-box">
+                <h3>Newsletter</h3>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Your Email">
+                    <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 <span>CarRental</span>. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="cars.js"></script>
+</body>
+
+</html>
